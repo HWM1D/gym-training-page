@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شمارنده تمرینی</title>
+    <link rel="stylesheet" href="workout-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 شمارنده تمرینی</h1>
+        </header>
+
+        <!-- مرحله اول: اضافه کردن حرکات -->
+        <div id="setup-phase" class="phase active">
+            <div class="card">
+                <h2>🏋️ برنامه تمرینی خود را تنظیم کنید</h2>
+                
+                <div class="exercise-input-section">
+                    <div class="input-group">
+                        <input type="text" id="exercise-name" placeholder="نام حرکت (مثال: پرس سینه)">
+                        <input type="number" id="sets-count" placeholder="تعداد ست" min="1" max="10">
+                        <button id="add-exercise-btn" class="btn primary">
+                            <span>➕</span>
+                            اضافه کردن
+                        </button>
+                    </div>
+                </div>
+
+                <div id="exercises-list" class="exercises-list"></div>
+
+                <div class="action-buttons">
+                    <button id="start-workout-btn" class="btn success" style="display: none;">
+                        <span>🚀</span>
+                        شروع تمرین
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- مرحله دوم: ثبت تکرارها -->
+        <div id="workout-phase" class="phase">
+            <div class="card">
+                <h2>📊 ثبت تکرارها</h2>
+                <p class="instruction">روی هر حرکت کلیک کنید تا تکرارها را وارد کنید</p>
+                
+                <div id="workout-exercises" class="workout-exercises"></div>
+
+                <div class="action-buttons">
+                    <button id="finish-workout-btn" class="btn success">
+                        <span>✅</span>
+                        اتمام تمرین
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- مرحله سوم: خلاصه نتایج -->
+        <div id="summary-phase" class="phase">
+            <div class="card">
+                <h2>📈 خلاصه تمرین</h2>
+                <div id="workout-summary"></div>
+                
+                <div class="action-buttons">
+                    <button id="new-workout-btn" class="btn primary">
+                        <span>🔄</span>
+                        تمرین جدید
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- مودال برای ثبت تکرارها -->
+        <div id="reps-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-exercise-name"></h3>
+                    <button id="close-modal" class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="sets-table-container"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="save-reps-btn" class="btn primary">ذخیره</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="workout-script.js"></script>
+</body>
+</html>
