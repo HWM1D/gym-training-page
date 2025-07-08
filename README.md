@@ -1,6 +1,6 @@
 # gym-training-page
 
-A compelete room chat (front-end) for your teams and friends <3
+A compelete gym training counter (front-end) for your teams and friends <3
 
   My social accounts :
 
